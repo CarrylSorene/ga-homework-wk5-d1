@@ -6,6 +6,7 @@ $(document).ready(function() {
   var results = $("#results");
 
   //event listener
+  searchOption.on('change', runSearch);
   submitSearch.on('click', runSearch);
   
   function runSearch(e) {
