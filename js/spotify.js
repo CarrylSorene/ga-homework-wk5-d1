@@ -26,6 +26,7 @@ $(document).ready(function() {
       $.each(response[alteredType].items, function(index, alteredType) {
         var result = $("<div id = 'results'>" + alteredType.name + "</div>");
         results.append(result);
+        searchOption.get(0).selectedIndex = 0;
       });
     })
     // console.log('Searching for something');
