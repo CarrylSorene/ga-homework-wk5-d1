@@ -1,0 +1,40 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: cursive;
+}
+
+.main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+h1 {
+  font-size: 4em;
+  text-align: center;
+}
+
+form {
+  border-radius: 10px;
+  max-width: 300px;
+  margin: 0 auto;
+  font-size: 1.2em;
+}
+
+input {
+  border-radius: 10px;
+  height: 20px;
+  width: 200px;
+}
+
+option {
+
+}
+
+#results {
+  font-size: 1.2em;
+  width: 600px;
+  margin: 0 auto;
+}
+

@@ -1,17 +1,32 @@
 $(document).ready(function() {
 
-  var searchTerm = $('#search-term').val();
-  var searchSpotify = $('#submit-search');
-  var searchOption = $('#option');
+  var searchTerm = $('#search-term'); //input text
+  var searchOption = $('#option'); //dropdown option
+  var submitSearch = $('#submit-search'); //submit button
+  var results = $("#results");
 
-//event listener
-  searchSpotify.on('click', runSearch);
+  //event listener
+  submitSearch.on('click', runSearch);
   
   function runSearch(e) {
     event.preventDefault(e)
-    $.get("https://api.spotify.com/v1/search?q=' + search-term + '&type=' + searchOption", function(response){
+
+    // console.log(searchTerm, searchOption, submitSearch);
+
+    $.get('https://api.spotify.com/v1/search?q=' + searchTerm.val() + '&type=' + searchOption.val(), function(response){
+
+      results.empty()
+
       console.log(response);
-    });
-    console.log('Searching for something');
+
+      var alteredType = searchOption.val() + "s" //in object, has an s
+
+      //get inside object - [string in object]
+      $.each(response[alteredType].items, function(index, alteredType) {
+        var result = $("<div id = 'results'>" + alteredType.name + "</div>");
+        results.append(result);
+      });
+    })
+    // console.log('Searching for something');
   }
 });
